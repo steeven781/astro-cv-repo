@@ -1,14 +1,38 @@
 ---
-title: Senior Detective
-date: 1990 - Present
-url: http://ropibbe.nf/savadru
-location: Los Angeles, California
-org: Los Angeles Police Department (LAPD)
-tags: ["Law Enforcement", "Police Work", "Tactical Operations", "Case Management"]
+title: Senior QA Engineer
+date: 2022 - Present
+location: El Salvador | Guatemala City
+org: Alphapoint
+url: "#"
+tags:
+  [
+    "QA",
+    "Quality Assurance",
+    "Automation",
+    "Regression Testing",
+    "E2E Testing",
+    "Functional Testing",
+    "Integration Testing",
+    "Mobile Testing",
+    "Crypto Wallet",
+    "Postman",
+    "Cypress",
+    "Appium",
+    "Jira",
+    "Selenium",
+    "MySQL",
+    "C#",
+    "WebSockets",
+  ]
 ---
 
-- Lead investigations into organized crime, drug trafficking, and high-profile criminal activities.
-- Conducted extensive surveillance operations utilizing advanced equipment and techniques to gather critical intelligence.
-- Collaborated with federal agencies such as the FBI and DEA on joint task forces to dismantle criminal syndicates.
-- Played a pivotal role in numerous undercover operations, successfully infiltrating criminal organizations and gathering actionable evidence for prosecution.
-- Trained and mentored junior officers in surveillance tactics, undercover operations, and tactical maneuvers.
+- Analyzed requirements and user stories to design and execute comprehensive test cases, ensuring quality assurance for the Chivo Wallet App, Website, and APIs.
+- Led the QA life cycle, overseeing processes for seamless and functional releases across applications.
+- Developed and maintained test plans for Automation, Functional, Regression, Exploratory, Smoke, and End-to-End (E2E) testing.
+- Tracked, documented, and resolved defects, ensuring high-quality product delivery.
+- Maintained and updated automated test plans to support continuous testing and product updates.
+- Automated testing for APIs using Postman and Thunder Client, web portals with Cypress, and mobile applications with Java, Selenium, and Appium.
+- Reviewed testing procedures, analyzed test results, and generated detailed test reports for stakeholders.
+- Collaborated with technical and product teams to define acceptance criteria and determine testing approaches for new and existing functionalities.
+- Utilized Jira for issue tracking and Confluence for documentation, streamlining communication and processes.
+- Led the QA team, driving continuous improvement and upholding high standards of product quality and performance.

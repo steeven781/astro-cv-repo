@@ -1,15 +1,17 @@
 ---
-title: Bachelor of Science in Criminal Justice
-location: University of California, Los Angeles (UCLA)
-url: http://foeberoz.gm/kuj
-institute: University of California
-date: 1970-1975
+title: Systems Engineering and Computer Science
+location: Guatemala, Guatemala City
+url: https://www.umg.edu.gt/
+institute: Universidad Mariano Gálvez Guatemala
+date: 2014 - 2020
 tags:
   [
-    "Criminal Justice",
-    "Law Enforcement",
-    "Legal Studies",
-    "Public Safety",
-    "Court System",
+    "Programming",
+    "Networking",
+    "Cyber Security",
+    "Development",
+    "Math",
+    "Science",
+    "Compilers",
   ]
 ---

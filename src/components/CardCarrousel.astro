@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+const { title, logos } = Astro.props;
+---
+<style>
+    .carousel {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      will-change: transform;
+      transform: translateX(0);
+    }
+    
+    .carousel-track img {
+      flex-shrink: 0;
+      width: 60px; /* Adjust size as needed */
+      height: 60px; /* Make it a square */
+      object-fit: cover;
+      border-radius: 50%; /* Make it a circle */
+      transition: transform 0.3s ease;
+    }
+    
+    .carousel-track img:hover {
+      transform: scale(1.1); /* Slight zoom on hover */
+    }
+    </style>
+
+<div class="card card-compact card-bordered border border-[oklch(var(--s))] w-full md:w-112 lg:w-128 hover:shadow-lg transition-all my-4">
+  <div class="card-body">
+    <div class="grid grid-cols-3 gap-4 mb-2">
+      <div class="self-start col-span-2 justify-self-start text-left">
+        <h1 class="uppercase card-title font-extrabold tracking-tighter md:text-2xl">{title}</h1>
+      </div>
+    </div>
+    <div class="carousel mt-4 overflow-hidden relative">
+      {Array.isArray(logos) && logos.length > 0 && (
+        <div class="carousel-track">
+          {logos.map((logo, index) => (
+            <img
+              src={logo}
+              alt={`Customer logo ${index + 1}`}
+              class="h-16 w-auto object-contain mx-2"
+              :key={index}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track') as HTMLElement; // Cast to HTMLElement
+    const trackChildren = Array.from(track.children) as HTMLElement[];
+
+    if (track) {
+      let position = 0;
+      const speed = 0.3; // Speed of the carousel in pixels per frame
+      let isPaused = false; // Pause control
+
+      // Clone all children to ensure an infinite loop
+      trackChildren.forEach((child) => {
+        const clone = child.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      // Function to move the carousel
+      const moveCarousel = () => {
+        position -= speed;
+        if (!isPaused) {
+                    // Reset position if the first element is out of view
+        if (Math.abs(position) >= trackChildren[0].offsetWidth + 300) {
+          // Move the first child to the end
+          const firstChild = track.firstElementChild as HTMLElement;;
+          if (firstChild) {
+            track.appendChild(firstChild);
+            position += firstChild.offsetWidth + 32; // Adjust for the gap
+          }
+        }
+        track.style.transform = `translateX(${position}px)`;
+        }
+        requestAnimationFrame(moveCarousel);
+      };
+
+
+      // Pause on hover
+      track.addEventListener('mouseenter', () => {
+        isPaused = true;
+      });
+
+      // Resume on hover end
+      track.addEventListener('mouseleave', () => {
+        isPaused = false;
+      });
+
+      // Start moving the carousel
+      requestAnimationFrame(moveCarousel);
+    }
+  });
+</script>

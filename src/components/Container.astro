@@ -3,14 +3,16 @@ import { Icon } from "astro-icon/components";
 import AccordionLayout from "../layouts/AccordionLayout.astro";
 import * as about from "../pages/about/about.md";
 import Card from "./Card.astro";
+import CardCarrousel from "./CardCarrousel.astro";
 import ContactCard from "./ContactCard.astro";
+
 const works = await Astro.glob("../pages/works/*.md");
 const projects = await Astro.glob("../pages/projects/*.md");
 const studies = await Astro.glob("../pages/studies/*.md");
 const certificates = await Astro.glob("../pages/certificates/*.md");
-const blogs = await Astro.glob("../pages/blogs/*.md");
+const customers = await Astro.glob("../pages/customers/*.md");
 const contact = await Astro.glob("../pages/contact/*.md");
-const PDF = "/cv-20240219.pdf";
+const PDF = "/cv-2024.pdf";
 ---
 
 <div class="join join-vertical gap-1">
@@ -65,14 +67,16 @@ const PDF = "/cv-20240219.pdf";
             description={item.compiledContent()}
             tags={item.frontmatter.tags}
             url={item.frontmatter.url}
-            url_name={"View project"}
           />
         );
       })
     }
   </AccordionLayout>
 
-  <AccordionLayout title={"Certifications"} icon={"carbon:certificate"}>
+  <AccordionLayout
+    title={"Certifications & Courses"}
+    icon={"carbon:certificate"}
+  >
     {
       certificates.map((item) => {
         return (
@@ -82,23 +86,20 @@ const PDF = "/cv-20240219.pdf";
             description={item.compiledContent()}
             tags={item.frontmatter.tags}
             url={item.frontmatter.url}
-            url_name={"View Certificate"}
+            url_name={item.frontmatter.org}
           />
         );
       })
     }
   </AccordionLayout>
 
-  <AccordionLayout title={"Blogs"} icon={"carbon:pen"}>
+  <AccordionLayout title={"Satisfied Customers"} icon={"carbon:user-admin"}>
     {
-      blogs.map((item) => {
+      customers.map((item) => {
         return (
-          <Card
+          <CardCarrousel
             title={item.frontmatter.title}
-            timeframe={item.frontmatter.date}
-            description={item.compiledContent()}
-            url={item.frontmatter.url}
-            url_name={item.frontmatter.url_name}
+            logos={item.frontmatter.logos}
           />
         );
       })
