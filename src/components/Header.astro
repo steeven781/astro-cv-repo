@@ -1,6 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
-import * as about from "../pages/about/about.md";
+
+const about = await getCollection("about");
+const aboutData = about[0].data;
 ---
 
 <header class="mx-auto pt-6 pb-2 relative">
@@ -22,20 +25,20 @@ import * as about from "../pages/about/about.md";
         class="flex justify-center md:justify-between items-center mb-2 relative"
       >
         <h1 class="text-3xl font-extrabold tracking-tight md:text-3xl relative">
-          {about.frontmatter.name}
+          {aboutData.name}
           <div class="absolute top-0 left-full ml-2 -mt-4">
             <div class="badge w-max text-sm font-light badge-outline shadow-lg">
-              {about.frontmatter.pronouns}
+              {aboutData.pronouns}
             </div>
           </div>
         </h1>
       </div>
       <h2 class="text-lg mb-2 text-secondary">
-        {about.frontmatter.designation}
+        {aboutData.designation}
       </h2>
       <div class="flex items-center justify-center mt-1">
         <Icon name="carbon:location" class="w-4 h-4 mr-1" />
-        <p class="text-sm text-secondary">{about.frontmatter.location}</p>
+        <p class="text-sm text-secondary">{aboutData.location}</p>
       </div>
     </div>
   </article>

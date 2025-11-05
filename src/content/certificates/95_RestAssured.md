@@ -1,9 +1,15 @@
 ---
 title: API Testing Using Rest Assured Test Automation Tool
 org: Coursera
-tags: [API, Testing, Rest, RestAssured, API-Testing, JSON]
+tags:
+  - "API"
+  - "Testing"
+  - "Rest"
+  - "RestAssured"
+  - "API-Testing"
+  - "JSON"
 url: https://www.coursera.org/account/accomplishments/certificate/RZPVFV75YLR0
-date: 2024
+date: "2024"
 ---
 
 The "API Testing Using Rest Assured Test Automation Tool" course is a beginner-level guided project designed to teach you how to automate API testing using the Rest Assured tool. Over approximately 2 hours, you'll gain hands-on experience in:

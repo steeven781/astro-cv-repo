@@ -12,7 +12,7 @@ tags:
     "SFTP",
     "Barcodes",
   ]
-date: 2022
+date: "2022"
 url: "#"
 ---
 

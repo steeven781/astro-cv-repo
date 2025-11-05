@@ -1,0 +1,31 @@
+---
+import SkeletonCard from './SkeletonCard.astro';
+import Card from './Card.astro';
+
+const { collection } = Astro.props;
+const items = await collection;
+---
+
+{items ? (
+  items.map(async (item) => {
+    const { Content } = await item.render();
+    return (
+      <Card
+        title={item.data.title}
+        timeframe={item.data.date}
+        tags={item.data.tags}
+        url={item.data.url}
+        url_name={item.data.org || item.data.institute}
+        location={item.data.location}
+      >
+        <Content slot="description" />
+      </Card>
+    );
+  })
+) : (
+  <>
+    <SkeletonCard />
+    <SkeletonCard />
+    <SkeletonCard />
+  </>
+)}

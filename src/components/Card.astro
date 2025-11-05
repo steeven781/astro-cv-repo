@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-const { timeframe, title, description, url, tags, url_name, location } =
+const { timeframe, title, url, tags, url_name, location } =
   Astro.props;
 ---
 
@@ -27,7 +27,7 @@ const { timeframe, title, description, url, tags, url_name, location } =
     <div class="w-full">
       <div class="w-full">
         <article class="prose text-secondary">
-          <Fragment set:html={description}></Fragment>
+          <slot name="description" />
         </article>
         {Array.isArray(tags) && (
           <div class="flex flex-wrap content-around gap-2 my-4">

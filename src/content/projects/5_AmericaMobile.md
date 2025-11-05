@@ -2,7 +2,7 @@
 title: SIM Management America Mobile
 tags:
   ["Angular", "Java", "Oracle", "API-Rest", "Postman", "Web App", "Selenium"]
-date: 2019
+date: "2019"
 url: "#"
 ---
 
