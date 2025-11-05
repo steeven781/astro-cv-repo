@@ -1,27 +1,37 @@
 ---
 import SkeletonCard from './SkeletonCard.astro';
 import Card from './Card.astro';
+import TimelineCard from './TimelineCard.astro';
 
-const { collection } = Astro.props;
+const { collection, cardType } = Astro.props;
 const items = await collection;
+
+const cardComponents = {
+  default: Card,
+  timeline: TimelineCard,
+};
+
+const SelectedCard = cardComponents[cardType] || cardComponents.default;
 ---
 
 {items ? (
-  items.map(async (item) => {
-    const { Content } = await item.render();
-    return (
-      <Card
-        title={item.data.title}
-        timeframe={item.data.date}
-        tags={item.data.tags}
-        url={item.data.url}
-        url_name={item.data.org || item.data.institute}
-        location={item.data.location}
-      >
-        <Content slot="description" />
-      </Card>
-    );
-  })
+  <div class={cardType === 'timeline' ? 'flex flex-col' : ''}>
+    {items.map(async (item) => {
+      const { Content } = await item.render();
+      return (
+        <SelectedCard
+          title={item.data.title}
+          timeframe={item.data.date}
+          tags={item.data.tags}
+          url={item.data.url}
+          url_name={item.data.org || item.data.institute}
+          location={item.data.location}
+        >
+          <Content slot="description" />
+        </SelectedCard>
+      );
+    })}
+  </div>
 ) : (
   <>
     <SkeletonCard />

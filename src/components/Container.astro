@@ -30,12 +30,14 @@ const PDF = "/cv-2025.pdf";
           <h2 class="text-2xl font-bold mt-4">{about[0].data.name}</h2>
           <p class="text-secondary">{about[0].data.designation}</p>
           <div class="flex justify-center md:justify-start gap-4 mt-4">
-            <a href="#" class="text-secondary hover:text-primary"><Icon name="carbon:logo-github" class="w-6 h-6" /></a>
-            <a href="#" class="text-secondary hover:text-primary"><Icon name="carbon:logo-linkedin" class="w-6 h-6" /></a>
-            <a href="#" class="text-secondary hover:text-primary"><Icon name="carbon:email" class="w-6 h-6" /></a>
+            {contact.filter(c => c.data.title !== 'WhatsApp').map(c => (
+              <a href={c.data.url} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary">
+                <Icon name={c.data.icon} class="w-6 h-6" />
+              </a>
+            ))}
           </div>
         </div>
-        <div class="md:w-2/3 mt-4 md:mt-0 prose text-secondary/90 max-w-none">
+        <div class="md:w-2/3 mt-4 md:mt-0 prose text-secondary/90 max-w-none text-justify">
           <AboutContent />
         </div>
       </div>
@@ -44,7 +46,7 @@ const PDF = "/cv-2025.pdf";
 
   <ScrollObserver>
     <AccordionLayout title={"Work"} icon={"carbon:construction"}>
-      <CardGrid collection={works} />
+      <CardGrid collection={works} cardType="timeline" />
     </AccordionLayout>
   </ScrollObserver>
 
@@ -113,18 +115,18 @@ const PDF = "/cv-2025.pdf";
   <ScrollObserver>
     <AccordionLayout title={"Contact"} icon={"carbon:location-person"}>
       <div class="flex flex-wrap content-around gap-4 justify-center">
-        {
-          contact.map((item) => {
-            return (
-              <ContactCard
-                url={item.data.url}
-                url_name={item.data.title}
-                icon={item.data.icon}
-              />
-            );
-          })
-        }
-      </div>
+      {
+        contact.filter(c => c.data.title !== 'WhatsApp').map((item) => {
+          return (
+            <ContactCard
+              url={item.data.url}
+              url_name={item.data.title}
+              icon={item.data.icon}
+            />
+          );
+        })
+      }
+    </div>
     </AccordionLayout>
   </ScrollObserver>
 </div>
