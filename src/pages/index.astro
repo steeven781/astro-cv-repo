@@ -28,10 +28,10 @@ import { Icon } from "astro-icon/components";
     <meta name="generator" content={Astro.generator} />
     <title>Steeven Medina CV</title>
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen max-w-full">
     <Header />
     <div
-      class="flex items-center absolute top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 xl:top-10 xl:right-10 z-10"
+      class="flex items-center absolute top-4 right-4 z-10"
     >
       <Icon name="carbon:moon" class="w-4 h-4" />
       <input
@@ -44,12 +44,11 @@ import { Icon } from "astro-icon/components";
       <Icon name="carbon:light" class="w-4 h-4" />
     </div>
 
-    <div
-      class="divider mx-auto h-fit max-w-3xl w-[95vw] flex flex-nowrap bg-secondary"
-    >
+    <div class="w-full px-4 sm:px-6 lg:px-8">
+      <div class="divider mx-auto h-px max-w-3xl bg-secondary/50"></div>
     </div>
     <main class="flex-grow w-full px-4 sm:px-6 lg:px-8 py-2 overflow-y-auto">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-4xl mx-auto w-full">
         <Container />
       </div>
     </main>
@@ -58,21 +57,25 @@ import { Icon } from "astro-icon/components";
 </html>
 
 <style is:global>
-  body {
+  html, body {
     font-family: "DM Sans Variable", sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
-  @media (min-width: 768px) {
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-    }
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
   }
 
-  @media only screen and (max-width: 480px) {
-    * {
-      font-size: 12px;
-    }
+  .prose {
+    max-width: 100% !important;
+  }
+
+  .prose p, .prose li, .prose td, .prose th {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .overflow-y-scroll::-webkit-scrollbar {
@@ -85,18 +88,5 @@ import { Icon } from "astro-icon/components";
 
   .overflow-y-scroll {
     scrollbar-width: 1px;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-    }
   }
 </style>
