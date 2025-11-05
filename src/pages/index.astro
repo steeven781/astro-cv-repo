@@ -10,12 +10,13 @@ import { Icon } from "astro-icon/components";
   <head>
     <script is:inline>
       if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "lofi");
-      } else
+        document.documentElement.setAttribute("data-theme", "black");
+      } else {
         document.documentElement.setAttribute(
           "data-theme",
           localStorage.getItem("theme")
         );
+      }
     </script>
     <script>
       import { themeChange } from "theme-change";
@@ -47,10 +48,8 @@ import { Icon } from "astro-icon/components";
       class="divider mx-auto h-fit max-w-3xl w-[95vw] flex flex-nowrap bg-secondary"
     >
     </div>
-    <main
-      class="mx-auto flex-grow max-h-[90vh] md:max-h-[70vh] max-w-3xl overflow-y-scroll py-2 grid w-[95vw]"
-    >
-      <div class="container">
+    <main class="flex-grow w-full px-4 py-2 overflow-y-auto">
+      <div class="max-w-4xl mx-auto">
         <Container />
       </div>
     </main>
