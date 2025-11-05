@@ -29,10 +29,10 @@ const { timeframe, title, url, tags, url_name, location } =
         <article class="prose prose-sm md:prose-base text-secondary break-words max-w-full">
           <slot name="description" />
         </article>
-        {Array.isArray(tags) && (
-          <div class="flex flex-wrap content-around gap-2 my-4">
+        {Array.isArray(tags) && tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
             {tags.map((item) => (
-              <span class="badge text-center inline-block align-middle w-max h-max text-sm  badge-outline shadow-md mb-1" :key={item}>{item}</span>
+              <span class="badge badge-sm md:badge-md badge-outline text-xs md:text-sm font-medium px-3 py-2 transition-colors hover:bg-base-200" :key={item}>{item}</span>
             ))}
           </div>
         )}
