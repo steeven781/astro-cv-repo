@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Astro build output
+dist/
+
+# Claude Code local session data
+.claude/
