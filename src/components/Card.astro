@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-const { timeframe, title, url, tags, url_name, location } =
+const { timeframe, title, url, tags, url_name, location, description_es } =
   Astro.props;
 ---
 
-<div class="card card-compact card-bordered border border-[oklch(var(--s))] w-full max-w-full hover:shadow-lg transition-all my-4">
+<div class="card card-compact w-full max-w-full border border-base-300/30 border-l-4 border-l-transparent hover:border-base-300/50 hover:border-l-primary hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 my-4 cursor-default">
   <div class="card-body p-4 sm:p-6 min-w-0">
     <div class="flex flex-col sm:flex-row justify-between gap-2 mb-3 min-w-0">
       <div class="flex-1 min-w-0">
-        <h1 class="uppercase card-title font-extrabold tracking-tighter text-lg sm:text-xl md:text-2xl break-words">{title}</h1>
+        <h1 class="uppercase card-title font-extrabold tracking-tighter text-xl md:text-2xl break-words font-heading">{title}</h1>
         {location && (
           <div class="flex items-center mt-1 sm:mt-2">
             <Icon name="carbon:location" class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1" />
@@ -18,7 +18,7 @@ const { timeframe, title, url, tags, url_name, location } =
       </div>
 
       {timeframe && (
-        <div class="badge w-max h-max text-xs sm:text-sm text-center badge-outline inline-block align-middle shadow-md font-mono self-start sm:self-center">
+        <div class="badge w-max h-max text-xs text-center badge-outline inline-block align-middle shadow-md font-mono self-start sm:self-center shrink-0">
           {timeframe}
         </div>
       )}
@@ -26,13 +26,18 @@ const { timeframe, title, url, tags, url_name, location } =
 
     <div class="w-full max-w-full min-w-0">
       <div class="w-full max-w-full min-w-0">
-        <article class="prose prose-sm md:prose-base text-secondary break-words max-w-full">
+        <article class="lang-en prose prose-base text-secondary break-words max-w-full">
           <slot name="description" />
         </article>
+        {description_es && (
+          <p class="lang-es text-base text-secondary leading-relaxed break-words">
+            {description_es}
+          </p>
+        )}
         {Array.isArray(tags) && tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mt-4">
             {tags.map((item) => (
-              <span class="badge badge-sm md:badge-md badge-outline text-xs md:text-sm font-medium px-3 py-2 transition-colors hover:bg-base-200" :key={item}>{item}</span>
+              <span class="badge badge-sm md:badge-md badge-outline text-xs md:text-sm font-medium px-3 py-2 transition-all duration-200 hover:border-primary/50 hover:bg-primary/10 hover:text-primary" :key={item}>{item}</span>
             ))}
           </div>
         )}

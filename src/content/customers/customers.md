@@ -1,5 +1,6 @@
 ---
 title: "Satisfied Customers"
+title_es: "Clientes Satisfechos"
 logos:
   - "/logos/logo1.png"
   - "/logos/logo2.png"

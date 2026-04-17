@@ -10,6 +10,7 @@ tags:
   - "JSON"
 url: https://www.coursera.org/account/accomplishments/certificate/RZPVFV75YLR0
 date: "2024"
+description_es: "Proyecto guiado de nivel principiante para automatizar pruebas de API usando Rest Assured. En aproximadamente 2 horas obtendrás experiencia práctica enviando solicitudes HTTP (GET, POST, PUT, DELETE), agregando aserciones a respuestas y trabajando con JSON. Ideal para profesionales de QA manual o de automatización que deseen mejorar sus habilidades en automatización de APIs sin necesidad de instalaciones locales."
 ---
 
 The "API Testing Using Rest Assured Test Automation Tool" course is a beginner-level guided project designed to teach you how to automate API testing using the Rest Assured tool. Over approximately 2 hours, you'll gain hands-on experience in:

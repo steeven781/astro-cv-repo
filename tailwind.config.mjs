@@ -14,6 +14,8 @@ export default {
 				},
 				black: {
 					...require("daisyui/src/theming/themes")["black"],
+					"primary": "#22C55E",
+					"primary-content": "#0f172a",
 					"--rounded-box": "1rem",
 					"--rounded-btn": "0.5rem",
 					"--rounded-badge": "1.9rem",
@@ -25,7 +27,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'sans': ["DM Sans", "Inter", ...defaultTheme.fontFamily.sans],
+				'sans': ["DM Sans Variable", "DM Sans", ...defaultTheme.fontFamily.sans],
+				'heading': ["Space Grotesk Variable", "Space Grotesk", "DM Sans Variable", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

@@ -6,30 +6,34 @@ const about = await getCollection("about");
 const aboutData = about[0].data;
 ---
 
-<header class="mx-auto pt-6 pb-2 w-full">
-  <div class="flex flex-col items-center gap-4 w-full max-w-2xl px-4 mx-auto">
-    <div class="flex-shrink-0 w-40 h-40 rounded-full shadow-md overflow-hidden border-2 border-base-300">
-      <img
-        alt="avatar"
-        src="/profile.webp"
-        class="w-full h-full object-cover grayscale-[50] hover:grayscale-0 transition-all duration-300"
-      />
+<header class="mx-auto pt-10 pb-4 w-full">
+  <div class="flex flex-col items-center gap-5 w-full max-w-2xl px-4 mx-auto">
+    <div class="relative flex-shrink-0">
+      <div class="w-36 h-36 rounded-full overflow-hidden ring-2 ring-primary/40 ring-offset-4 ring-offset-base-100 shadow-xl shadow-primary/10">
+        <img
+          alt="avatar"
+          src="/profile.webp"
+          class="w-full h-full object-cover transition-all duration-300 hover:scale-105"
+        />
+      </div>
+      <span class="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-primary rounded-full border-2 border-base-100 shadow" title="Available for work"></span>
     </div>
     <div class="text-center">
-      <div class="flex flex-col sm:flex-row items-center gap-2">
-        <h1 class="text-3xl font-extrabold tracking-tight">
+      <div class="flex flex-col sm:flex-row items-center gap-2 justify-center">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-heading">
           {aboutData.name}
         </h1>
-        <div class="badge badge-outline text-sm font-light shadow-lg">
+        <div class="badge badge-outline text-xs font-mono tracking-wider">
           {aboutData.pronouns}
         </div>
       </div>
-      <h2 class="text-lg mb-2 text-secondary mt-1">
-        {aboutData.designation}
+      <h2 class="text-base mt-1.5 text-primary font-semibold tracking-wide">
+        <span class="lang-en">{aboutData.designation}</span>
+        <span class="lang-es">{aboutData.designation_es ?? aboutData.designation}</span>
       </h2>
-      <div class="flex items-center justify-center mt-1">
-        <Icon name="carbon:location" class="w-4 h-4 mr-1" />
-        <p class="text-sm text-secondary">{aboutData.location}</p>
+      <div class="flex items-center justify-center mt-2 text-secondary/60">
+        <Icon name="carbon:location" class="w-3.5 h-3.5 mr-1" />
+        <p class="text-sm">{aboutData.location}</p>
       </div>
     </div>
   </div>

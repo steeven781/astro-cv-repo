@@ -1,24 +1,41 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { title, timeframe, location, url_name, tags } = Astro.props;
+const { title, timeframe, location, url_name, tags, description_es } = Astro.props;
+
+const esBullets = description_es
+  ? description_es.split('\n').map(l => l.trim()).filter(l => l.startsWith('- ')).map(l => l.slice(2))
+  : [];
 ---
 
-<div class="relative pl-8 sm:pl-32 py-6 group w-full max-w-full">
+<div class="relative pl-8 sm:pl-32 py-6 group w-full max-w-full cursor-default">
   <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-base-300/50 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-primary after:border-4 after:box-content after:border-base-100 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5"></div>
   <div class="mt-0.5 sm:mt-0 sm:ml-32 min-w-0 max-w-full">
-    <h3 class="text-xl font-bold text-base-content break-words">{title}</h3>
-    <div class="flex items-center text-sm text-secondary font-medium mt-1">
+    <h3 class="text-xl md:text-2xl font-bold font-heading text-base-content break-words group-hover:text-primary transition-colors duration-200">{title}</h3>
+    <div class="flex items-center text-base text-secondary font-medium mt-1 flex-wrap gap-x-2">
       <span>{url_name}</span>
-      <span class="mx-2">·</span>
+      <span class="text-secondary/40">·</span>
       <span>{location}</span>
     </div>
-    <div class="text-sm text-secondary mt-1">{timeframe}</div>
-    <div class="prose prose-sm md:prose-base text-secondary/90 mt-2 break-words max-w-full">
+    <div class="text-sm text-secondary/60 mt-1 font-mono">{timeframe}</div>
+
+    <div class="lang-en prose prose-base text-secondary/90 mt-3 break-words max-w-full">
       <slot name="description" />
     </div>
+
+    {esBullets.length > 0 && (
+      <ul class="lang-es mt-3 space-y-1.5 text-base text-secondary/90 break-words max-w-full list-none">
+        {esBullets.map(bullet => (
+          <li class="flex gap-2">
+            <span class="text-primary mt-1 flex-shrink-0">▸</span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
     {tags && tags.length > 0 && (
       <div class="flex flex-wrap gap-2 mt-4">
-        {tags.map(tag => <span class="badge badge-sm md:badge-md badge-outline text-xs md:text-sm font-medium px-3 py-2 transition-colors hover:bg-base-200">{tag}</span>)}
+        {tags.map(tag => <span class="badge badge-sm md:badge-md badge-outline text-xs md:text-sm font-medium px-3 py-2 transition-all duration-200 hover:border-primary/50 hover:bg-primary/10 hover:text-primary">{tag}</span>)}
       </div>
     )}
   </div>

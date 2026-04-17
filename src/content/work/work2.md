@@ -18,17 +18,30 @@ tags:
     "Microsoft DevOps",
     "SQL Server",
   ]
+description_es: |
+  - Traduje requerimientos de negocio complejos e historias de usuario en casos de prueba detallados y de alta cobertura que garantizaron calidad consistente en aplicaciones a escala empresarial.
+  - Colaboré interfuncionalmente con equipos de TFS, SharePoint, Reporting Services y Aplicaciones de Escritorio para unificar y optimizar flujos de trabajo de testing de extremo a extremo.
+  - Diseñé y ejecuté una estrategia de prueba integral que abarca testing de Automatización, Funcional, Regresión, Exploratorio, Smoke y E2E, asegurando una validación exhaustiva en cada ciclo de lanzamiento.
+  - Identifiqué, documenté e impulsé la resolución de defectos en APIs y aplicaciones, manteniendo un estándar de cero tolerancia para bugs críticos en producción.
+  - Construí y ejecuté suites de prueba automatizadas con ReadyAPI y Postman, acelerando significativamente los ciclos de validación de APIs y reduciendo el esfuerzo de pruebas manuales.
+  - Automaticé pipelines de regresión de APIs con Postman y JavaScript, estableciendo una validación de servicios confiable y reproducible que escala con los cambios del sistema.
+  - Incrementé la eficiencia del testing de aplicaciones web diseñando flujos de automatización E2E con Selenium y Java, reduciendo considerablemente el tiempo de pruebas manuales.
+  - Mantuve planes de prueba automatizados y colecciones versionados y actualizados a lo largo del ciclo de vida del proyecto, garantizando precisión y alineación con requerimientos en evolución.
+  - Integré scripts de automatización directamente en los pipelines de CI/CD de TFS, habilitando controles de calidad continuos dentro del flujo de despliegue.
+  - Administré un Plan de Pruebas integral enfocado en testing funcional y de características, siendo el referente de calidad del equipo para nuevos desarrollos y lanzamientos en curso.
+  - Aproveché Microsoft TFS de forma integral — desde el rastreo de defectos y la adición de pruebas de automatización por sprint hasta aprobaciones de pipelines y gestión de solicitudes de cambio — centralizando las operaciones de calidad.
+  - Gestioné el seguimiento de tareas y la visibilidad de carga de trabajo en TFS, mejorando la colaboración del equipo y garantizando una entrega consistente por sprint.
 ---
 
-- Analyzed requirements and user stories to design and execute detailed test cases, ensuring comprehensive testing coverage.
-- Collaborated with Team Foundation Server (TFS), SharePoint, Reporting Services, and Desktop Applications to manage and optimize testing workflows.
-- Developed a robust test plan encompassing Automation, Functional, Regression, Exploratory, Smoke, and End-to-End (E2E) testing for thorough validation.
-- Tracked and documented defects, errors, bugs, and glitches in APIs and applications, ensuring prompt resolution and quality assurance.
-- Developed and executed automated test steps using ReadyAPI and Postman collections to enhance API testing efficiency.
-- Automated API testing with Postman and JavaScript to ensure consistent and reliable service functionality.
-- Streamlined web application testing processes by automating workflows with Selenium and Java.
-- Maintained and updated automated test plans and collections throughout the project lifecycle to ensure relevance and accuracy.
-- Integrated automation test scripts into TFS pipelines to support continuous integration and deployment.
-- Maintained an accurate and comprehensive Test Plan focusing on functional testing for new features and ongoing development.
-- Leveraged Microsoft TFS for defect tracking, issue reporting, user story monitoring, pipeline approvals, managing change requests, and adding automation tests for each sprint.
-- Managed task tracking in TFS to monitor work hours, foster team collaboration, and ensure efficient task completion.
+- Translated complex business requirements and user stories into detailed, high-coverage test cases that drove consistent quality across enterprise-scale applications.
+- Collaborated cross-functionally with TFS, SharePoint, Reporting Services, and Desktop Application teams to unify and optimize end-to-end testing workflows.
+- Designed and executed a comprehensive test strategy encompassing Automation, Functional, Regression, Exploratory, Smoke, and E2E testing — ensuring thorough validation across every release cycle.
+- Identified, documented, and drove resolution of defects across APIs and applications, maintaining a zero-tolerance standard for critical production bugs.
+- Built and executed automated test suites using ReadyAPI and Postman, dramatically accelerating API validation cycles and reducing manual testing effort.
+- Automated API regression pipelines with Postman and JavaScript, establishing reliable and repeatable service validation that scaled with system changes.
+- Increased web application testing efficiency by engineering end-to-end automation workflows with Selenium and Java, cutting manual testing time significantly.
+- Maintained living, version-controlled automated test plans and collections throughout the project lifecycle, ensuring sustained accuracy and alignment with evolving requirements.
+- Integrated automation scripts directly into TFS CI/CD pipelines, enabling continuous quality gates within the deployment workflow.
+- Owned a comprehensive Test Plan focused on functional and feature testing, serving as the team's quality benchmark for new development and ongoing releases.
+- Leveraged Microsoft TFS holistically — from defect tracking and sprint automation test entries to pipeline approvals and change request management — centralizing quality operations.
+- Managed task tracking and workload visibility in TFS, improving team collaboration and ensuring consistent sprint delivery.

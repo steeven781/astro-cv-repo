@@ -131,7 +131,7 @@ declare module 'astro:content' {
   slug: "about";
   body: string;
   collection: "about";
-  data: any
+  data: InferEntrySchema<"about">
 } & { render(): Render[".md"] };
 };
 "certificates": {

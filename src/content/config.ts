@@ -8,6 +8,7 @@ const work = defineCollection({
     org: z.string(),
     url: z.string().url().or(z.literal('#')),
     tags: z.array(z.string()),
+    description_es: z.string().optional(),
   }),
 });
 
@@ -17,6 +18,7 @@ const projects = defineCollection({
     date: z.string(),
     url: z.string().url().or(z.literal('#')),
     tags: z.array(z.string()),
+    description_es: z.string().optional(),
   }),
 });
 
@@ -38,12 +40,14 @@ const certificates = defineCollection({
     url: z.string().url(),
     date: z.string(),
     tags: z.array(z.string()),
+    description_es: z.string().optional(),
   }),
 });
 
 const customers = defineCollection({
     schema: z.object({
         title: z.string(),
+        title_es: z.string().optional(),
         logos: z.array(z.string()),
     }),
 });
@@ -56,6 +60,19 @@ const contact = defineCollection({
     }),
 });
 
+const about = defineCollection({
+  schema: z.object({
+    title: z.string().optional(),
+    name: z.string(),
+    designation: z.string(),
+    designation_es: z.string().optional(),
+    location: z.string(),
+    pronouns: z.string().optional(),
+    website: z.string().optional(),
+    bio_es: z.string().optional(),
+  }),
+});
+
 export const collections = {
   work,
   projects,
@@ -63,4 +80,5 @@ export const collections = {
   certificates,
   customers,
   contact,
+  about,
 };

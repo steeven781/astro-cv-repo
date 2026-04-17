@@ -3,8 +3,8 @@ const { icon, url, url_name } = Astro.props;
 import { Icon } from "astro-icon/components";
 ---
 
-<a target="_blank" href={url}>
-  <button class="btn btn-outline btn-md mr-2"
-    ><Icon name={icon} class="w-6 h-6" />{url_name}</button
+<a target="_blank" href={url} class="cursor-pointer">
+  <button class="btn btn-outline min-h-[44px] mr-2 cursor-pointer transition-all duration-200 hover:border-primary hover:text-primary hover:bg-primary/10 hover:shadow-md hover:shadow-primary/10 font-medium"
+    ><Icon name={icon} class="w-5 h-5" />{url_name}</button
   >
 </a>

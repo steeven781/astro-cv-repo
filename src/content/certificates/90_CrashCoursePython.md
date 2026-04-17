@@ -11,6 +11,7 @@ tags:
   - "Tuples"
 url: https://www.coursera.org/account/accomplishments/certificate/WG1DXAVQ7ZUB
 date: "2025"
+description_es: "Curso diseñado para enseñarte los fundamentos para escribir programas simples en Python usando las estructuras más comunes. Sin experiencia previa requerida. Al finalizar, comprenderás los beneficios de programar en roles de TI, la sintaxis básica de Python, diferentes entornos de desarrollo y cómo combinar todo ese conocimiento para resolver problemas de programación complejos."
 ---
 
 This course is designed to teach you the foundations in order to write simple programs in Python using the most common structures. No previous exposure to programming is needed. By the end of this course, you will understand the benefits of programming in IT roles; understand basic Python syntax; explore different code editors and developer environments; be able to write simple programs using Python; figure out how the building blocks of programming fit together; and combine all of this knowledge to solve a complex programming problem.

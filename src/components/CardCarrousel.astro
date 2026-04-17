@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-const { title, logos } = Astro.props;
+const { title, titleEs, logos } = Astro.props;
 ---
 <style>
   .carousel-container {
@@ -41,7 +41,10 @@ const { title, logos } = Astro.props;
 
 <div class="card card-compact card-bordered border-[oklch(var(--s))] w-full hover:shadow-lg transition-all my-4">
   <div class="card-body">
-    <h1 class="uppercase card-title font-extrabold tracking-tighter md:text-2xl">{title}</h1>
+    <h1 class="uppercase card-title font-extrabold tracking-tighter md:text-2xl font-heading">
+      <span class="lang-en">{title}</span>
+      {titleEs && <span class="lang-es">{titleEs}</span>}
+    </h1>
     <div class="carousel-container mt-4">
       {Array.isArray(logos) && logos.length > 0 && (
         <div class="carousel-track">

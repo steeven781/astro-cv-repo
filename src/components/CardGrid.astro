@@ -26,6 +26,7 @@ const SelectedCard = cardComponents[cardType] || cardComponents.default;
           url={item.data.url}
           url_name={item.data.org || item.data.institute}
           location={item.data.location}
+          description_es={item.data.description_es}
         >
           <Content slot="description" />
         </SelectedCard>
