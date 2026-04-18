@@ -246,6 +246,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "projects": {
+"0_TreasuryPlatform.md": {
+	id: "0_TreasuryPlatform.md";
+  slug: "0_treasuryplatform";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
 "1_ApexCore.md": {
 	id: "1_ApexCore.md";
   slug: "1_apexcore";

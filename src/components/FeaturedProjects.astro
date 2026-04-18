@@ -1,0 +1,152 @@
+---
+import { Icon } from "astro-icon/components";
+
+const projects = [
+  {
+    title: "Nexus Admin",
+    year: "2025",
+    company: "Production",
+    tagline_en: "Multi-tenant platform for residential & condominium management",
+    tagline_es: "Plataforma multi-tenant para administración de condominios y comunidades residenciales",
+    contribution_en: "Architected and built the entire system independently — data model, multi-tenant RLS policies, RBAC permission matrix, IoT device integration, and full frontend — with no prior codebase to work from.",
+    contribution_es: "Diseñé y construí el sistema completo de forma independiente — modelo de datos, políticas RLS multi-tenant, matriz RBAC, integración con dispositivos IoT y frontend completo — sin codebase previo.",
+    problem_en: "Communities relied on spreadsheets and manual phone coordination for payments, access control, and resident management — no audit trail, no remote control, no unified view.",
+    problem_es: "Las comunidades dependían de hojas de cálculo y coordinación telefónica para cobros, acceso y residentes — sin trazabilidad, sin control remoto, sin vista unificada.",
+    impact_en: "Designed a scalable multi-tenant architecture that eliminated spreadsheet-based billing, reduced remote gate access from a manual phone call to a single click, and enabled full audit traceability across payments, sessions, and access events — deployed and live across multiple independent communities.",
+    impact_es: "Diseñé una arquitectura multi-tenant escalable que eliminó la dependencia de hojas de cálculo para cobranza, redujo la apertura de accesos remotos de una llamada manual a un solo clic, y habilitó trazabilidad completa de pagos, sesiones y eventos de acceso — desplegado y activo en múltiples comunidades independientes.",
+    role_en: "System Architect & Full-Stack Engineer — end-to-end ownership",
+    role_es: "Arquitecto de Sistema e Ingeniero Full-Stack — ownership end-to-end",
+    tags: ["React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Vite 6", "Shelly API (IoT)", "ApexCharts", "FullCalendar", "PWA"],
+    icon: "carbon:building",
+  },
+  {
+    title: "WIS Admin UI",
+    year: "2024",
+    company: "Internal · Production",
+    tagline_en: "Warehouse logistics & distribution management system",
+    tagline_es: "Sistema de gestión logística de bodega y distribución",
+    contribution_en: "Designed and implemented the full frontend architecture — picking status workflow engine, QR route confirmation with decremental per-package scanning that simulates real scanner behavior, in-flow validation at every operational step, role-filtered navigation, and fully separate desktop/mobile views per module.",
+    contribution_es: "Diseñé e implementé la arquitectura frontend completa — motor de flujo de estados de picking, confirmación de rutas por QR con escaneo decremental por bulto que simula el comportamiento real de un scanner, validación en cada paso del flujo operativo, navegación filtrada por rol y vistas desktop/mobile separadas por módulo.",
+    problem_en: "Picking and delivery operations ran on verbal coordination and spreadsheets — status was invisible, routes had no traceability, and errors only surfaced after delivery.",
+    problem_es: "Las operaciones de picking y distribución corrían en coordinación verbal y hojas de cálculo — el estado era invisible, las rutas sin trazabilidad, y los errores solo aparecían después de la entrega.",
+    impact_en: "Implemented operational validation flows that eliminated verbal coordination and manual errors. Real-time error prevention at each workflow step — combined with in-flow problem reporting and QR scanning simulation — reduced post-delivery incidents and enabled full route traceability, scalable across multiple warehouse operations.",
+    impact_es: "Implementé flujos de validación operativa que eliminaron la coordinación verbal y los errores manuales. La prevención de errores en tiempo real en cada paso del flujo — junto con el reporte de problemas en flujo y la simulación de escaneo QR — redujo los incidentes post-entrega y habilitó trazabilidad completa de rutas, escalable a múltiples operaciones de bodega.",
+    role_en: "Frontend Architect & Engineer — end-to-end ownership",
+    role_es: "Arquitecto e Ingeniero Frontend — ownership end-to-end",
+    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "React Router v6", "Axios", "Framer Motion", "Docker"],
+    icon: "carbon:delivery",
+  },
+  {
+    title: "OpenQase",
+    year: "2026",
+    company: "Side Project · Beta",
+    tagline_en: "Multi-tenant test case management platform for QA teams",
+    tagline_es: "Plataforma multi-tenant de gestión de casos de prueba para equipos QA",
+    contribution_en: "Designed and built the entire platform solo — multi-tenant auth, granular RBAC permission matrix, AI-assisted test case generation, dual table/kanban views with drag-and-drop, real-time dashboard analytics, and Supabase RLS data isolation per organization.",
+    contribution_es: "Diseñé y construí toda la plataforma en solitario — auth multi-tenant, matriz de permisos RBAC granular, generación de casos de prueba asistida por IA, vistas duales tabla/kanban con drag-and-drop, analytics en tiempo real y aislamiento de datos por organización vía RLS.",
+    problem_en: "QA teams manage their entire testing cycle through spreadsheets and disconnected tools — no unified view of test cases, runs, defects, or coverage across multiple projects or organizations.",
+    problem_es: "Los equipos QA gestionan su ciclo de pruebas completo con hojas de cálculo y herramientas desconectadas — sin vista unificada de casos, ejecuciones, defectos ni cobertura entre proyectos u organizaciones.",
+    impact_en: "Built a platform that centralized the full QA lifecycle, eliminating fragmented spreadsheet workflows. Integrated AI-assisted test case generation that reduced manual writing effort and improved coverage consistency across test runs. Per-organization RLS isolation and granular RBAC enable secure, independent scaling without duplicating infrastructure.",
+    impact_es: "Desarrollé una plataforma que centralizó el ciclo QA completo, eliminando la dependencia de hojas de cálculo y herramientas dispersas. Integré generación de casos de prueba asistida por IA, reduciendo el esfuerzo de escritura manual y mejorando la consistencia del coverage entre ejecuciones. El aislamiento RLS por organización y el RBAC granular permiten escalar de forma segura entre equipos independientes sin duplicar infraestructura.",
+    role_en: "Full-Stack Architect & Engineer — end-to-end ownership",
+    role_es: "Arquitecto e Ingeniero Full-Stack — ownership end-to-end",
+    tags: ["React 18", "TypeScript", "Supabase", "Zustand", "TanStack Query", "TanStack Table", "shadcn/ui", "dnd-kit", "Recharts"],
+    icon: "carbon:task",
+  },
+];
+---
+
+<div class="space-y-6 py-2">
+
+  <!-- Intro -->
+  <div class="space-y-1.5">
+    <p class="lang-en text-secondary/60 text-sm leading-relaxed max-w-2xl">
+      Systems I designed, built, and deployed with full ownership — making real architecture decisions around security, data isolation, scalability, and UX. No team behind them, no templates: from problem definition to production.
+    </p>
+    <p class="lang-es text-secondary/60 text-sm leading-relaxed max-w-2xl">
+      Sistemas que diseñé, construí y desplegué con ownership completo — tomando decisiones reales de arquitectura sobre seguridad, aislamiento de datos, escalabilidad y experiencia de usuario. Sin equipo detrás, sin plantillas: del problema a producción.
+    </p>
+  </div>
+
+  <!-- Cards grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {projects.map((p) => (
+      <div class="group relative flex flex-col rounded-2xl border border-base-300/30 bg-base-200/30 hover:bg-base-200/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden cursor-default">
+
+        <!-- Top accent bar -->
+        <div class="h-[3px] w-full bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+
+        <div class="flex flex-col flex-1 p-5 gap-4">
+
+          <!-- Header -->
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-200">
+                <Icon name={p.icon} class="w-4.5 h-4.5 text-primary" />
+              </div>
+              <div class="min-w-0">
+                <h3 class="font-bold font-heading text-base leading-tight truncate">{p.title}</h3>
+                <p class="text-xs text-secondary/50 mt-0.5 truncate">{p.company}</p>
+              </div>
+            </div>
+            <span class="flex-shrink-0 text-xs font-mono font-semibold text-primary/70 bg-primary/10 border border-primary/20 rounded-full px-2.5 py-1 leading-none">
+              {p.year}
+            </span>
+          </div>
+
+          <!-- Tagline -->
+          <p class="text-xs font-medium text-primary/80 italic leading-snug lang-en">{p.tagline_en}</p>
+          <p class="text-xs font-medium text-primary/80 italic leading-snug lang-es">{p.tagline_es}</p>
+
+          <!-- Divider -->
+          <div class="h-px bg-base-300/30" />
+
+          <!-- Contribution -->
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/50 lang-en">Contribution</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/50 lang-es">Contribución</span>
+            <p class="text-xs text-secondary/80 leading-relaxed lang-en">{p.contribution_en}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed lang-es">{p.contribution_es}</p>
+          </div>
+
+          <!-- Problem -->
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/40 lang-en">Problem</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/40 lang-es">Problema</span>
+            <p class="text-xs text-secondary/60 leading-relaxed lang-en">{p.problem_en}</p>
+            <p class="text-xs text-secondary/60 leading-relaxed lang-es">{p.problem_es}</p>
+          </div>
+
+          <!-- Impact -->
+          <div class="space-y-1 rounded-xl bg-primary/5 border border-primary/10 px-3 py-2.5">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary/60 lang-en">Impact</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary/60 lang-es">Impacto</span>
+            <p class="text-xs text-secondary/80 leading-relaxed lang-en">{p.impact_en}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed lang-es">{p.impact_es}</p>
+          </div>
+
+          <!-- Spacer -->
+          <div class="flex-1" />
+
+          <!-- Footer: role + tags -->
+          <div class="space-y-3 pt-1 border-t border-base-300/20">
+            <div class="flex items-center gap-1.5">
+              <Icon name="carbon:user-role" class="w-3.5 h-3.5 text-secondary/40 flex-shrink-0" />
+              <span class="text-xs text-secondary/60 font-medium lang-en">{p.role_en}</span>
+              <span class="text-xs text-secondary/60 font-medium lang-es">{p.role_es}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              {p.tags.map((tag) => (
+                <span class="text-[10px] font-medium px-2 py-0.5 rounded-full border border-base-300/40 text-secondary/60 hover:border-primary/40 hover:text-primary/80 transition-colors duration-150">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    ))}
+  </div>
+
+</div>
