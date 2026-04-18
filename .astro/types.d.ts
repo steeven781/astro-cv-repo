@@ -135,6 +135,41 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "certificates": {
+"85_IntroAgentSkills.md": {
+	id: "85_IntroAgentSkills.md";
+  slug: "85_introagentskills";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"86_ClaudeCodeInAction.md": {
+	id: "86_ClaudeCodeInAction.md";
+  slug: "86_claudecodeinaction";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"87_Django.md": {
+	id: "87_Django.md";
+  slug: "87_django";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"88_FastAPI.md": {
+	id: "88_FastAPI.md";
+  slug: "88_fastapi";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"89_PromptEngineering.md": {
+	id: "89_PromptEngineering.md";
+  slug: "89_promptengineering";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
 "90_CrashCoursePython.md": {
 	id: "90_CrashCoursePython.md";
   slug: "90_crashcoursepython";
