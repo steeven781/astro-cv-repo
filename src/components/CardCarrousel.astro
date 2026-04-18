@@ -25,13 +25,20 @@ const { title, titleEs, logos } = Astro.props;
   }
 
   .carousel-track img {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
-    margin: 0 2rem;
+    margin: 0 0.75rem;
     flex-shrink: 0;
     border-radius: 50%;
     transition: transform 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .carousel-track img {
+      height: 60px;
+      margin: 0 2rem;
+    }
   }
 
   .carousel-track img:hover {

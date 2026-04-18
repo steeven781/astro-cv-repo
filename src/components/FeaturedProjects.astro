@@ -56,20 +56,20 @@ const projects = [
 ];
 ---
 
-<div class="space-y-6 py-2">
+<div class="space-y-6 py-2 w-full overflow-hidden">
 
   <!-- Intro -->
   <div class="space-y-1.5">
-    <p class="lang-en text-secondary/60 text-sm leading-relaxed max-w-2xl">
+    <p class="lang-en text-secondary/60 text-sm leading-relaxed break-words">
       Systems I designed, built, and deployed with full ownership — making real architecture decisions around security, data isolation, scalability, and UX. No team behind them, no templates: from problem definition to production.
     </p>
-    <p class="lang-es text-secondary/60 text-sm leading-relaxed max-w-2xl">
+    <p class="lang-es text-secondary/60 text-sm leading-relaxed break-words">
       Sistemas que diseñé, construí y desplegué con ownership completo — tomando decisiones reales de arquitectura sobre seguridad, aislamiento de datos, escalabilidad y experiencia de usuario. Sin equipo detrás, sin plantillas: del problema a producción.
     </p>
   </div>
 
   <!-- Cards grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
     {projects.map((p) => (
       <div class="group relative flex flex-col rounded-2xl border border-base-300/30 bg-base-200/30 hover:bg-base-200/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden cursor-default">
 
@@ -95,8 +95,8 @@ const projects = [
           </div>
 
           <!-- Tagline -->
-          <p class="text-xs font-medium text-primary/80 italic leading-snug lang-en">{p.tagline_en}</p>
-          <p class="text-xs font-medium text-primary/80 italic leading-snug lang-es">{p.tagline_es}</p>
+          <p class="text-xs font-medium text-primary/80 italic leading-snug break-words lang-en">{p.tagline_en}</p>
+          <p class="text-xs font-medium text-primary/80 italic leading-snug break-words lang-es">{p.tagline_es}</p>
 
           <!-- Divider -->
           <div class="h-px bg-base-300/30" />
@@ -105,24 +105,24 @@ const projects = [
           <div class="space-y-1">
             <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/50 lang-en">Contribution</span>
             <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/50 lang-es">Contribución</span>
-            <p class="text-xs text-secondary/80 leading-relaxed lang-en">{p.contribution_en}</p>
-            <p class="text-xs text-secondary/80 leading-relaxed lang-es">{p.contribution_es}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed break-words lang-en">{p.contribution_en}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed break-words lang-es">{p.contribution_es}</p>
           </div>
 
           <!-- Problem -->
           <div class="space-y-1">
             <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/40 lang-en">Problem</span>
             <span class="text-[10px] font-bold uppercase tracking-widest text-secondary/40 lang-es">Problema</span>
-            <p class="text-xs text-secondary/60 leading-relaxed lang-en">{p.problem_en}</p>
-            <p class="text-xs text-secondary/60 leading-relaxed lang-es">{p.problem_es}</p>
+            <p class="text-xs text-secondary/60 leading-relaxed break-words lang-en">{p.problem_en}</p>
+            <p class="text-xs text-secondary/60 leading-relaxed break-words lang-es">{p.problem_es}</p>
           </div>
 
           <!-- Impact -->
           <div class="space-y-1 rounded-xl bg-primary/5 border border-primary/10 px-3 py-2.5">
             <span class="text-[10px] font-bold uppercase tracking-widest text-primary/60 lang-en">Impact</span>
             <span class="text-[10px] font-bold uppercase tracking-widest text-primary/60 lang-es">Impacto</span>
-            <p class="text-xs text-secondary/80 leading-relaxed lang-en">{p.impact_en}</p>
-            <p class="text-xs text-secondary/80 leading-relaxed lang-es">{p.impact_es}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed break-words lang-en">{p.impact_en}</p>
+            <p class="text-xs text-secondary/80 leading-relaxed break-words lang-es">{p.impact_es}</p>
           </div>
 
           <!-- Spacer -->
@@ -130,10 +130,10 @@ const projects = [
 
           <!-- Footer: role + tags -->
           <div class="space-y-3 pt-1 border-t border-base-300/20">
-            <div class="flex items-center gap-1.5">
-              <Icon name="carbon:user-role" class="w-3.5 h-3.5 text-secondary/40 flex-shrink-0" />
-              <span class="text-xs text-secondary/60 font-medium lang-en">{p.role_en}</span>
-              <span class="text-xs text-secondary/60 font-medium lang-es">{p.role_es}</span>
+            <div class="flex items-start gap-1.5 min-w-0">
+              <Icon name="carbon:user-role" class="w-3.5 h-3.5 text-secondary/40 flex-shrink-0 mt-0.5" />
+              <span class="text-xs text-secondary/60 font-medium break-words min-w-0 lang-en">{p.role_en}</span>
+              <span class="text-xs text-secondary/60 font-medium break-words min-w-0 lang-es">{p.role_es}</span>
             </div>
             <div class="flex flex-wrap gap-1.5">
               {p.tags.map((tag) => (

@@ -1,23 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
-import BaseLayout from "./BaseLayout.astro";
 const { title, titleEs, icon } = Astro.props;
 ---
 
-<BaseLayout>
-  <div class="collapse collapse-arrow ease-in-out duration-300 mb-1 w-full max-w-full rounded-lg border border-base-300/20 hover:border-base-300/40 transition-colors duration-200">
-    <input aria-label={title} type="checkbox" class="peer" />
-    <div class="collapse-title font-extrabold tracking-tight text-xl md:text-2xl !pr-12 sm:!pr-16 min-w-0 min-h-[44px] border-l-[3px] border-l-transparent peer-checked:border-l-primary peer-checked:text-primary transition-all duration-200 cursor-pointer font-heading">
-      <div class="flex items-center min-w-0">
-        <Icon name={icon} class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mr-2 sm:mr-3 md:mr-4 flex-shrink-0" />
-        <span class="lang-en truncate">{title}</span>
-        {titleEs && <span class="lang-es truncate">{titleEs}</span>}
-      </div>
-    </div>
-    <div class="collapse-content transition-all duration-300 ease-in-out w-full max-w-full">
-      <div class="px-3 sm:px-6 py-4 w-full max-w-full">
-        <slot/>
-      </div>
+<div class="collapse collapse-arrow ease-in-out duration-300 mb-1 w-full max-w-full rounded-lg border border-base-300/20 hover:border-base-300/40 transition-colors duration-200 overflow-hidden">
+  <input aria-label={title} type="checkbox" class="peer" />
+  <div class="collapse-title font-extrabold tracking-tight text-xl md:text-2xl !pr-12 sm:!pr-16 min-w-0 min-h-[44px] border-l-[3px] border-l-transparent peer-checked:border-l-primary peer-checked:text-primary transition-all duration-200 cursor-pointer font-heading">
+    <div class="flex items-center min-w-0">
+      <Icon name={icon} class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mr-2 sm:mr-3 md:mr-4 flex-shrink-0" />
+      <span class="lang-en truncate">{title}</span>
+      {titleEs && <span class="lang-es truncate">{titleEs}</span>}
     </div>
   </div>
-</BaseLayout>
+  <div class="collapse-content transition-all duration-300 ease-in-out w-full max-w-full overflow-hidden">
+    <div class="px-2 sm:px-4 py-4 w-full max-w-full overflow-hidden">
+      <slot/>
+    </div>
+  </div>
+</div>
